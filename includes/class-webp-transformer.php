@@ -153,8 +153,6 @@ class Webp_Transformer {
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Webp_Transformer_Admin( $this->get_plugin_name(), $this->get_version() );
-
-        //$this->loader->add_filter('async_upload_file', $plugin_admin, 'generate_webp', 10, 2);
         $this->loader->add_filter('wp_generate_attachment_metadata', $plugin_admin, 'generate_webp', 10, 2);
     }
 
